@@ -1,5 +1,5 @@
 # Exact Screenshot
-
+Live:  https://exact-screenshot-alpha.vercel.app
 Implement exactly the screenshot and nothing else
 
 This project was built with [Lovable](https://lovable.dev).
