@@ -146,7 +146,7 @@ export function ShopBrowser({ pool, lockedCategory, initialQuery = "" }: ShopFil
         {genders.map((g) => (
           <CheckRow
             key={g}
-            label={g[0].toUpperCase() + g.slice(1)}
+            label={g.charAt(0).toUpperCase() + g.slice(1)}
             checked={gens.includes(g)}
             onChange={() => toggle(gens, setGens, g)}
           />
@@ -210,7 +210,7 @@ export function ShopBrowser({ pool, lockedCategory, initialQuery = "" }: ShopFil
           max={500}
           step={10}
           onValueChange={([v]) => {
-            setMaxPrice(v);
+            setMaxPrice(v ?? 500);
             setPage(1);
           }}
         />

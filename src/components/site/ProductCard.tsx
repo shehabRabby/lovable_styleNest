@@ -14,8 +14,8 @@ export function ProductCard({ product }: { product: Product }) {
   return (
     <article className="group relative">
       <Link
-        to="/product/$id"
-        params={{ id: product.id }}
+        to={"/product/$id" as never}
+        params={{ id: product.id } as never}
         className="block overflow-hidden rounded-sm bg-surface"
       >
         <div className="relative aspect-[3/4] overflow-hidden">
@@ -41,7 +41,7 @@ export function ProductCard({ product }: { product: Product }) {
             <button
               onClick={(e) => {
                 e.preventDefault();
-                addToCart(product, product.sizes[0], product.colors[0].name);
+                addToCart(product, product.sizes[0] ?? "", product.colors[0]?.name ?? "");
                 toast.success("Added to bag", { description: product.name });
               }}
               className="flex w-full items-center justify-center gap-2 bg-primary py-3 text-[11px] tracking-[0.18em] text-primary-foreground uppercase transition-colors hover:bg-accent"
@@ -68,7 +68,7 @@ export function ProductCard({ product }: { product: Product }) {
           {product.brand}
         </p>
         <h3 className="font-sans text-sm leading-snug font-medium">
-          <Link to="/product/$id" params={{ id: product.id }} className="hover:text-accent">
+          <Link to={"/product/$id" as never} params={{ id: product.id } as never} className="hover:text-accent">
             {product.name}
           </Link>
         </h3>
