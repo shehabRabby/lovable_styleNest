@@ -76,20 +76,20 @@ export function Navbar() {
                 </div>
                 <div className="mt-auto grid grid-cols-3 border-t border-border text-center text-xs">
                   <Link
-                    to="/account"
+                    to={"/account" as never}
                     onClick={() => setMenuOpen(false)}
                     className="py-4 hover:bg-muted"
                   >
                     Account
                   </Link>
                   <Link
-                    to="/wishlist"
+                    to={"/wishlist" as never}
                     onClick={() => setMenuOpen(false)}
                     className="border-x border-border py-4 hover:bg-muted"
                   >
                     Wishlist
                   </Link>
-                  <Link to="/cart" onClick={() => setMenuOpen(false)} className="py-4 hover:bg-muted">
+                  <Link to={"/cart" as never} onClick={() => setMenuOpen(false)} className="py-4 hover:bg-muted">
                     Cart
                   </Link>
                 </div>
@@ -128,7 +128,7 @@ export function Navbar() {
             {searchOpen ? <X className="size-5" /> : <Search className="size-5" />}
           </button>
           <Link
-            to="/wishlist"
+            to={"/wishlist" as never}
             aria-label="Wishlist"
             className="relative rounded-sm p-2 transition-colors hover:bg-muted"
           >
@@ -136,7 +136,7 @@ export function Navbar() {
             {wishlist.length > 0 && <Dot count={wishlist.length} />}
           </Link>
           <Link
-            to="/cart"
+            to={"/cart" as never}
             aria-label="Cart"
             className="relative rounded-sm p-2 transition-colors hover:bg-muted"
           >
@@ -144,7 +144,7 @@ export function Navbar() {
             {cartCount > 0 && <Dot count={cartCount} />}
           </Link>
           <Link
-            to="/account"
+            to={"/account" as never}
             aria-label="Account"
             className="rounded-sm p-2 transition-colors hover:bg-muted"
           >
