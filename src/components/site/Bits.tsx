@@ -16,7 +16,7 @@ export function Breadcrumbs({
         <span key={item.label} className="flex items-center gap-1.5">
           <ChevronRight className="size-3" />
           {item.to ? (
-            <Link to={item.to} params={item.params as never} className="hover:text-accent">
+            <Link to={item.to as never} params={item.params as never} className="hover:text-accent">
               {item.label}
             </Link>
           ) : (
@@ -48,7 +48,7 @@ export function SectionHeading({
       </div>
       {action && (
         <Link
-          to={action.to}
+          to={action.to as never}
           className="link-underline text-[11px] tracking-[0.18em] uppercase hover:text-accent"
         >
           {action.label}
